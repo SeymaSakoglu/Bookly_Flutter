@@ -9,7 +9,8 @@
 
 ## **Proje Hakkında**
 
-Bookly, kullanıcıların okudukları veya okuyacakları kitapları dijital olarak kaydedebileceği, ilerlemelerini takip edebileceği ve kitaplarıyla ilgili notlar ekleyebileceği bir mobil uygulamadır. Kullanıcılar, her ekledikleri kitap için bir tohum diker ve okuma süreci ilerledikçe tohum büyüyerek bir ağaca dönüşür. Böylece, kullanıcılar tamamladıkları her kitapla birlikte uygulama içinde gelişen bir orman oluşturur.
+Bookly, kitap okuma sürecini dijital olarak takip etmeyi sağlayan bir mobil uygulamadır. Kullanıcılar, okudukları veya okumayı planladıkları kitapları ekleyerek bilgilerini kaydedebilir, sayfa ilerlemelerini güncelleyebilir ve notlar ile özetler ekleyebilir. 
+Her eklenen kitap bir tohum olarak başlar ve okundukça ağaca dönüşerek kişisel bir okuma ormanı oluşturur. Bookly, okuma alışkanlıklarını teşvik eden görselleştirilmiş bir deneyim sunar.
 
 📌 **Ana Özellikler:**
 
