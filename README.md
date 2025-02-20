@@ -1,2 +1,3 @@
-# Bookly_Flutter
-İstinye Üniversitesi Bilgisayar Programcılığı Bitirme Projesi 
+# flutter_app
+
+A new Flutter project.

@@ -1,0 +1,1 @@
+// hafizaya kalici olarak okuma/yazma islemlerimizi yapicaz
