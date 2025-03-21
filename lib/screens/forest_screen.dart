@@ -1,0 +1,1 @@
+// Orman simülasyonunun gösterildiği sayfa

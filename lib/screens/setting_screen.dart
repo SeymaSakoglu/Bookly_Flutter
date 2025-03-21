@@ -1,0 +1,1 @@
+// ayarların olduğu ekran

@@ -1,0 +1,1 @@
+// Profil bilgilerinin gösterildiği sayfa + ayarlar ve login ekranına geçiş

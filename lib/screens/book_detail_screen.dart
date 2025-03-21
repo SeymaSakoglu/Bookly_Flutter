@@ -1,0 +1,1 @@
+// Kitap hakkında detaylı bilgilerin gösterildiği sayfa
