@@ -4,14 +4,13 @@ import 'package:flutter/material.dart';
 //import 'package:flutter/cupertino.dart';
 import 'package:lottie/lottie.dart';
 
-
 class LoadingScreen extends StatelessWidget {
   const LoadingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(254, 232, 176, 90),
+      backgroundColor: const Color.fromARGB(253, 250, 215, 166),
       body: Column(
         //mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -23,36 +22,43 @@ class LoadingScreen extends StatelessWidget {
                 children: [
                   // Logo bölümü
                   Expanded(
-                    child: Container(
-                      width: 250,
-                      height: 250,
+                    child: SizedBox(
+                      width: 300,
+                      height: 300,
                       child: Image.asset(
                         'assets/images/logo.png',
                         fit: BoxFit.contain,
                       ),
                     ),
                   ),
-                  const Text(
-                    'Bookly',
-                    style: TextStyle(
-                      fontSize: 40,
-                    ),
-                  ),
+
 
                   // Yükleniyor yazısı
                   //CircularProgressIndicator(),
 
-                  DotLottieLoader.fromAsset("assets/motions/loading.lottie",
+                  SizedBox(
+                    width: 350,
+                    child: DotLottieLoader.fromAsset(
+                      "assets/motions/loading.lottie",
                       frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
-                    if (dotlottie != null) {
-                      return Lottie.memory(dotlottie.animations.values.single);
-                    } else {
-                      return Container();
-                    }
-                  },
+                        if (dotlottie != null) {
+                          return Lottie.memory(
+                              dotlottie.animations.values.single);
+                        } else {
+                          return Container();
+                        }
+                      },
+                    ),
                   ),
-
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
+                  const Text(
+                    '(skgl.istinye-2025)',
+                    style: TextStyle(
+                      fontSize: 10,
+                    ),
+                  ),
+                  SizedBox(height: 5),
+                  
                 ],
               ),
             ),
