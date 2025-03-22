@@ -28,3 +28,4 @@ flutter:
     - assets/icons/
     - assets/languages/
     - assets/motions/
+    - assets/motions/loading.lottie

@@ -1,8 +1,8 @@
 //acilis ekrani
+import 'package:dotlottie_loader/dotlottie_loader.dart';
 import 'package:flutter/material.dart';
 //import 'package:flutter/cupertino.dart';
 import 'package:lottie/lottie.dart';
-import 'package:dotlottie/dotlottie.dart'; // Eğer DotLottie kullanıyorsanız
 
 
 class LoadingScreen extends StatelessWidget {
