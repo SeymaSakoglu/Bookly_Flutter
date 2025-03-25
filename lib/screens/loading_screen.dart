@@ -21,14 +21,18 @@ class LoadingScreen extends StatelessWidget {
               //width: double.infinity,
               child: Column(
                 children: [
+                  
                   // Logo bölümü
-                  Expanded(
-                    child: SizedBox(
-                      width: 300,
-                      height: 300,
-                      child: Image.asset(
-                        'assets/images/logo.png',
-                        fit: BoxFit.contain,
+                  InkWell(
+                    onTap: () => context.go("/home"),                    
+                    child: Expanded(
+                      child: SizedBox(
+                        width: 300,
+                        height: 300,
+                        child: Image.asset(
+                          'assets/images/logo.png',
+                          fit: BoxFit.contain,
+                        ),
                       ),
                     ),
                   ),
@@ -37,32 +41,27 @@ class LoadingScreen extends StatelessWidget {
                   // Yükleniyor yazısı
                   //CircularProgressIndicator(),
 
-                  InkWell(
-                    onTap: () => context.go("/home"),
-                    child: SizedBox(
-                      width: 350,
-                      child: DotLottieLoader.fromAsset(
-                        "assets/motions/loading.lottie",
-                        frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
-                          if (dotlottie != null) {
-                            return Lottie.memory(
-                                dotlottie.animations.values.single);
-                          } else {
-                            return Container();
-                          }
-                        },
+                  Expanded(
+                      child: SizedBox(
+                        width: 350,
+                        child: DotLottieLoader.fromAsset(
+                          "assets/motions/loading.lottie",
+                          frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
+                            if (dotlottie != null) {
+                              return Lottie.memory(
+                                  dotlottie.animations.values.single);
+                            } else {
+                              return Container();
+                            }
+                          },
+                        ),
                       ),
-                    ),
                   ),
                   SizedBox(height: 10),
-                  const Text(
-                    '(skgl.istinye-2025)',
-                    style: TextStyle(
-                      fontSize: 10,
+                  Text(
+                    "(skgl.istinye-2025)",
+                    style: Theme.of(context).textTheme.labelLarge
                     ),
-                  ),
-                  SizedBox(height: 5),
-                  
                 ],
               ),
             ),
