@@ -1,9 +1,5 @@
-//acilis ekrani
-import 'package:dotlottie_loader/dotlottie_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-//import 'package:flutter/cupertino.dart';
-import 'package:lottie/lottie.dart';
 
 class LoadingScreen extends StatelessWidget {
   const LoadingScreen({super.key});
@@ -13,57 +9,40 @@ class LoadingScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(253, 250, 215, 166),
       body: Column(
-        //mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // Logo ve yükleme göstergesi bölümü
+          // Version
+          Container(
+            alignment: Alignment.topRight,
+            padding: const EdgeInsets.all(10.0),
+            child: Text(
+              "Version 1.00.01",
+              style: Theme.of(context).textTheme.labelLarge,
+            ),
+          ),
+
+          // Logo
           Expanded(
-            child: SizedBox.expand(
-              //width: double.infinity,
-              child: Column(
-                children: [
-                  
-                  // Logo bölümü
-                  InkWell(
-                    onTap: () => context.go("/home"),                    
-                    child: Expanded(
-                      child: SizedBox(
-                        width: 300,
-                        height: 300,
-                        child: Image.asset(
-                          'assets/images/logo.png',
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                    ),
+            child: Center(
+              child: InkWell(
+                onTap: () => context.go("/home"),
+                child: SizedBox(
+                  width: 300,
+                  height: 300,
+                  child: Image.asset(
+                    'assets/images/logo.png',
+                    fit: BoxFit.contain,
                   ),
-
-
-                  // Yükleniyor yazısı
-                  //CircularProgressIndicator(),
-
-                  Expanded(
-                      child: SizedBox(
-                        width: 350,
-                        child: DotLottieLoader.fromAsset(
-                          "assets/motions/loading.lottie",
-                          frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
-                            if (dotlottie != null) {
-                              return Lottie.memory(
-                                  dotlottie.animations.values.single);
-                            } else {
-                              return Container();
-                            }
-                          },
-                        ),
-                      ),
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    "(skgl.istinye-2025)",
-                    style: Theme.of(context).textTheme.labelLarge
-                    ),
-                ],
+                ),
               ),
+            ),
+          ),
+
+          // Alt yazı
+          Padding(
+            padding: const EdgeInsets.only(bottom: 20.0),
+            child: Text(
+              "(skgl.istinye-2025)",
+              style: Theme.of(context).textTheme.labelLarge,
             ),
           ),
         ],
