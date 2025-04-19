@@ -1,6 +1,8 @@
 // Ana sayfa
+
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -8,66 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /*
-      // AppBar
-      appBar: AppBar(
-        title: const Text('Ana Sayfa'),
-        actions: [
-          IconButton(
-            icon: const Icon(CupertinoIcons.bell),
-            onPressed: () {},
-          ),
-        ],
-      ),
-      
-
-      // Drawer (Yan Menü)
-      drawer: Drawer(
-        child: Column(
-          children: [
-            // Drawer Header
-            Container(
-              height: 200,
-              color: Colors.blue,
-              child: const Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    CupertinoIcons.person_circle,
-                    size: 80,
-                    color: Colors.white,
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    'Kullanıcı Adı',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            // Menü öğeleri
-            ListTile(
-              leading: const Icon(CupertinoIcons.home),
-              title: const Text('Ana Sayfa'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(CupertinoIcons.settings),
-              title: const Text('Ayarlar'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      ),
-*/
-      // Ana içerik
+      backgroundColor: const Color.fromARGB(253, 250, 215, 166),
       body: Column(
         children: [
           Expanded(
@@ -78,17 +21,22 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-
-      // Alt navigasyon çubuğu
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.black, // Seçili ikon rengi siyah
+        unselectedItemColor: Colors.grey, // Seçilmemiş ikon rengi gri
+        type: BottomNavigationBarType.fixed, // Tüm etiketlerin görünmesi için
         items: const [
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.book),
+            label: 'Kütüphane',
+          ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.home),
             label: 'Ana Sayfa',
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.search),
-            label: 'Keşfet',
+            icon: Icon(CupertinoIcons.tree),
+            label: 'Orman',
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.person),
@@ -96,7 +44,20 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
         onTap: (index) {
-          // Navigasyon işlemleri buraya gelecek
+          switch (index) {
+            case 0:
+              context.go('/library');
+              break;
+            case 1:
+              context.go('/home');
+              break;
+            case 2:
+              context.go('/forest');
+              break;
+            case 3:
+              context.go('/profile');
+              break;
+          }
         },
       ),
     );
